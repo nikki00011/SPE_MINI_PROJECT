@@ -1,8 +1,8 @@
 ---
-- name: Pull Docker Image from Docker Hub
+- name: Pull Docker Image from Docker Hub and Run Container
   hosts: localhost
   remote_user: nikki00011
-  become: false
+  become: yes
   tasks:
     - name: Pull Docker Image
       docker_image:
@@ -18,5 +18,15 @@
       service:
         name: docker
         state: started
-    - name: Running container
-      shell: docker run -it -d --name spe_mini nikki00011/spe_mini
+      become: yes
+
+    - name: Run Container
+      docker_container:
+        name: spe_mini
+        image: "nikki00011/spe_mini"
+        state: started
+      register: docker_container_result
+
+    - name: Display Docker Container Result
+      debug:
+        var: docker_container_result
