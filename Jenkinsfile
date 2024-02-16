@@ -29,7 +29,6 @@ pipeline {
                     sh 'docker push nikki00011/spe_mini'
                 }
             }
-
         }
     }
 }
