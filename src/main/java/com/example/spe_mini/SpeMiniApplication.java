@@ -11,60 +11,54 @@ public class SpeMiniApplication {
 		SpringApplication.run(SpeMiniApplication.class, args);
 		Scanner scanner = new Scanner(System.in);
 
-		System.out.println("Welcome to Java Calculator!");
-		System.out.println("Enter two numbers:");
-		double num1 = scanner.nextDouble();
-		double num2 = scanner.nextDouble();
+		while (true) {
+			System.out.println("Scientific Calculator Menu:");
+			System.out.println("1. Square Root");
+			System.out.println("2. Factorial");
+			System.out.println("3. Natural Logarithm");
+			System.out.println("4. Power Function");
+			System.out.println("5. Exit");
+			System.out.print("Enter your choice: ");
 
-		System.out.println("Select operation:");
-		System.out.println("1. Addition");
-		System.out.println("2. Subtraction");
-		System.out.println("3. Multiplication");
-		System.out.println("4. Division");
-		int operation = scanner.nextInt();
+			int choice = scanner.nextInt();
 
-		double result = 0;
-
-		switch (operation) {
-			case 1:
-				result = add(num1, num2);
-				break;
-			case 2:
-				result = subtract(num1, num2);
-				break;
-			case 3:
-				result = multiply(num1, num2);
-				break;
-			case 4:
-				result = divide(num1, num2);
-				break;
-			default:
-				System.out.println("Invalid operation!");
+			switch (choice) {
+				case 1:
+					System.out.print("Enter a number: ");
+					double num = scanner.nextDouble();
+					System.out.println("Square root of " + num + " is: " + Math.sqrt(num));
+					break;
+				case 2:
+					System.out.print("Enter a number: ");
+					int n = scanner.nextInt();
+					System.out.println("Factorial of " + n + " is: " + factorial(n));
+					break;
+				case 3:
+					System.out.print("Enter a number: ");
+					double x = scanner.nextDouble();
+					System.out.println("Natural logarithm of " + x + " is: " + Math.log(x));
+					break;
+				case 4:
+					System.out.print("Enter base: ");
+					double base = scanner.nextDouble();
+					System.out.print("Enter exponent: ");
+					double exponent = scanner.nextDouble();
+					System.out.println(base + " raised to the power of " + exponent + " is: " + Math.pow(base, exponent));
+					break;
+				case 5:
+					System.out.println("Exiting...");
+					System.exit(0);
+				default:
+					System.out.println("Invalid choice. Please enter a valid option.");
+			}
 		}
-
-		System.out.println("Result: " + result);
-
-		scanner.close();
 	}
 
-	public static double add(double num1, double num2) {
-		return num1 + num2;
-	}
-
-	public static double subtract(double num1, double num2) {
-		return num1 - num2;
-	}
-
-	public static double multiply(double num1, double num2) {
-		return num1 * num2;
-	}
-
-	public static double divide(double num1, double num2) {
-		if (num2 == 0) {
-			System.out.println("Error: Cannot divide by zero!");
-			return Double.NaN;
-		}
-		return num1 / num2;
+	public static int factorial(int n) {
+		if (n == 0)
+			return 1;
+		else
+			return (n * factorial(n - 1));
 	}
 
 }
