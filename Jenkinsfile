@@ -29,6 +29,15 @@ pipeline {
                     sh 'docker push nikki00011/spe_mini'
                 }
             }
+        stage('Run Ansible Playbook') {
+                    steps {
+                        script {
+                            ansiblePlaybook(
+                                playbook: 'deploy.yml',
+                                inventory: 'inventory'
+                             )
+                        }
+                    }
         }
     }
 }
