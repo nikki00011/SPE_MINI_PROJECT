@@ -1,7 +1,7 @@
 #FROM openjdk:17
 FROM ubuntu:latest
 
-EXPOSE 8080
+EXPOSE 8081
 
 # Update package lists and install OpenJDK 17 JRE
 RUN apt-get update && \
