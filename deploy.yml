@@ -2,7 +2,7 @@
 - name: Pull Docker Image from Docker Hub and Run Container
   hosts: localhost
   remote_user: Nikita
-  become: no
+  become: false
   tasks:
     - name: Pull Docker Image
       docker_image:
