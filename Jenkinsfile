@@ -27,6 +27,15 @@ pipeline {
                 }
             }
         }
+        // Stage to stop and remove existing Docker container
+                stage('Stop and Remove Existing Container') {
+                    steps {
+                        script {
+                            // Stop and remove existing Docker container named miniProject if it exists then
+                            sh 'docker rm -f spe_mini || true'
+                        }
+                    }
+                }
         stage('Run Ansible Playbook') {
             steps {
                 script {
