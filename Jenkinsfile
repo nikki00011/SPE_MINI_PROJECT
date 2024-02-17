@@ -10,6 +10,13 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
+        // Stage to run JUnit tests
+                stage('JUnit Tests') {
+                    steps {
+                        // Run JUnit tests with Maven
+                        sh 'mvn test'
+                    }
+                }
         stage('Build Docker Image') {
             steps {
                 script {
