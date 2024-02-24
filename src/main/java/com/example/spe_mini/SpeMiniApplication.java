@@ -37,7 +37,7 @@ public class SpeMiniApplication {
 						performOperation("Power", br);
 						break;
 					case "2":
-						performOperation("Logarithm", br);
+						performOperationlog("Logarithm", br);
 						break;
 					case "3":
 						performSingleInputOperation("Square Root", "√", br);
@@ -72,6 +72,7 @@ public class SpeMiniApplication {
 			case "Power":
 				result = performPower(a, b);
 				break;
+
 			default:
 				result = 0;
 				break;
@@ -79,11 +80,28 @@ public class SpeMiniApplication {
 		System.out.println("Result: " + result);
 	}
 
+    public static void performOperationlog(String operation, BufferedReader br) throws IOException {
+        System.out.print("\nEnter the number: ");
+        double a = Double.parseDouble(br.readLine());
+
+        double result;
+        switch (operation) {
+            case "Logarithm":
+                result = performLogarithmOperation(a);
+                break;
+            default:
+                result = 0;
+                break;
+        }
+        System.out.println("Result: " + result);
+    }
+
 	public static void performSingleInputOperation(String operation, String symbol, BufferedReader br) throws IOException {
 		System.out.print("\nEnter the number: ");
 		double input = Double.parseDouble(br.readLine());
 		double result;
 		switch (operation) {
+
 			case "Square Root":
 				result = performSquareRoot(input);
 				break;
@@ -131,4 +149,7 @@ public class SpeMiniApplication {
 			return factorial;
 		}
 	}
+    public static double performLogarithmOperation(double input) {
+        return Math.log(input);
+    }
 }
