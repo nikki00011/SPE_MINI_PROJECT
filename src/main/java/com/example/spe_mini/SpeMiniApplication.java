@@ -37,7 +37,11 @@ public class SpeMiniApplication {
 						performOperation("Power", br);
 						break;
 					case "2":
-						performOperationlog("Logarithm", br);
+						try {
+							performOperationlog("Logarithm", br); // Call the modified method here
+						} catch (IllegalArgumentException e) {
+							System.out.println(e.getMessage());
+						}
 						break;
 					case "3":
 						performSingleInputOperation("Square Root", "√", br);
