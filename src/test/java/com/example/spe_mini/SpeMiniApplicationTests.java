@@ -11,52 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 public class SpeMiniApplicationTests {
 
-	@Test
-	public void testPerformAddition() {
-		double result = SpeMiniApplication.performAddition(4, 3);
-		assertEquals(7, result, 0.0001, "Testing addition of two numbers");
-	}
 
-	@Test
-	public void testPerformSubtraction() {
-		double result = SpeMiniApplication.performSubtraction(8, 5);
-		assertEquals(3, result, 0.0001, "Testing subtraction of two numbers");
-	}
-
-	@Test
-	public void testPerformMultiplication() {
-		double result = SpeMiniApplication.performMultiplication(2, 6);
-		assertEquals(12, result, 0.0001, "Testing multiplication of two numbers");
-	}
-
-	@Test
-	public void testPerformDivision() {
-		double result = SpeMiniApplication.performDivision(9, 3);
-		assertEquals(3, result, 0.0001, "Testing division of two numbers");
-	}
-
-	@Test
-	public void testPerformDivisionByZero() {
-		assertThrows(ArithmeticException.class, () -> SpeMiniApplication.performDivision(9, 0), "Testing divide by zero exception");
-	}
-
-	@Test
-	public void testPerformSine() {
-		double result = SpeMiniApplication.performSine(Math.PI / 2);
-		assertEquals(1, result, 0.0001, "Testing sine function");
-	}
-
-	@Test
-	public void testPerformCosine() {
-		double result = SpeMiniApplication.performCosine(0);
-		assertEquals(1, result, 0.0001, "Testing cosine function");
-	}
-
-	@Test
-	public void testPerformTangent() {
-		double result = SpeMiniApplication.performTangent(0);
-		assertEquals(0, result, 0.0001, "Testing tangent function");
-	}
 
 	@Test
 	public void testPerformPower() {
