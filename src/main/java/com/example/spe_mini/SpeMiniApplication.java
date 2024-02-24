@@ -149,7 +149,10 @@ public class SpeMiniApplication {
 			return factorial;
 		}
 	}
-    public static double performLogarithmOperation(double input) {
-        return Math.log(input);
-    }
+	public static double performLogarithmOperation(double input) {
+		if (input <= 0) {
+			throw new IllegalArgumentException("Error: Logarithm of a non-positive number is undefined!");
+		}
+		return Math.log(input);
+	}
 }

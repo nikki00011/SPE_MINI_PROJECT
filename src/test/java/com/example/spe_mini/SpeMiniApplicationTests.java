@@ -60,4 +60,5 @@ public class SpeMiniApplicationTests {
 			SpeMiniApplication.performLogarithmOperation(input);
 		}, "Testing logarithm function with negative input");
 	}
+
 }
