@@ -19,17 +19,5 @@
         name: docker
         state: started
 
-#    - name: Run Container
-#      docker_container:
-#        name: spe_mini
-#        image: "nikki00011/spe_mini"
-#        state: started
-#      register: docker_container_result
-
-#    - name: Display Docker Container Result
-#      debug:
-#        var: docker_container_result
-
-
     - name: Running container
       shell: docker run -it -d --name spe_mini nikki00011/spe_mini
